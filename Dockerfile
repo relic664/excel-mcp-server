@@ -6,14 +6,12 @@ RUN pip install --no-cache-dir uv
 # Set working directory
 WORKDIR /app
 
-# Copy dependency files
+# Copy dependency files and source
 COPY pyproject.toml uv.lock README.md ./
+COPY src/ ./src/
 
 # Install dependencies using uv
 RUN uv pip install --system --no-cache-dir .
-
-# Copy source code
-COPY src/ ./src/
 
 # Expose port for HTTP mode
 EXPOSE 8000
