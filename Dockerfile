@@ -19,4 +19,4 @@ EXPOSE 8000
 # Default to streamable HTTP mode
 ENTRYPOINT ["python", "-m", "excel_mcp"]
 
-CMD ["streamable_http"]
+CMD ["streamable-http"]
